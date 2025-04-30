@@ -3,14 +3,14 @@ using System.Text.Encodings.Web;
 
 namespace MvcMovie.Controllers;
 
-public class HelloWorldController : Controller
+public class HelloWorld : Controller
 
 {
     // 
     // GET: /HelloWorld/
-    public string Index()
+    public IActionResult Index()
     {
-        return "Привет всем, я Конор и я проверю как это работает на самом деле!";
+        return View();
     }
     // 
     // GET: /HelloWorld/Welcome/ 
