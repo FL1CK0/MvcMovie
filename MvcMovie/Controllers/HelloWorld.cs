@@ -14,15 +14,11 @@ public class HelloWorld : Controller
     }
     // 
     // GET: /HelloWorld/Welcome/ 
-    public string Welcome()
+    public IActionResult Welcome(string name, int numTimes = 1)
     {
-        return "Пока мир";
-    }
-    // GET: /HelloWorld/Welcome/ 
-    // Requires using System.Text.Encodings.Web;
-    public string Welcome1(string name, int ID = 1)
-    {
-        return HtmlEncoder.Default.Encode($"Hello Conor {name}, ID: {ID}");
+        ViewData["Message"] = "Hello " + name;
+        ViewData["NumTimes"] = numTimes;
+        return View();
     }
 
 }
